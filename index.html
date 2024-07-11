@@ -22,7 +22,6 @@
 </head>
 
 <body>
-
   <div class="container mt-5">
     <h2 class="mb-4">Advertisement List</h2>
 
@@ -33,81 +32,103 @@
     </div>
 
     <div id="advertisements" class="row">
-      <!-- Static Advertisements -->
-      <div class="card mb-4 col-md-4">
-        <img class="card-img-top" src="https://via.placeholder.com/150" alt="Ad 1">
-        <div class="card-body">
-          <h5 class="card-title">Ad 1</h5>
-          <p class="card-text">This is the first advertisement.</p>
-          <p class="card-text" onclick="alert('Contact: contact1@example.com')">Contact: ***</p>
-        </div>
-        <div class="card-footer text-center">
-          <button class="btn btn-info btn-block" onclick="alert('Contact: contact1@example.com')">Details</button>
-        </div>
-      </div>
-
-      <div class="card mb-4 col-md-4">
-        <img class="card-img-top" src="https://via.placeholder.com/150" alt="Ad 2">
-        <div class="card-body">
-          <h5 class="card-title">Ad 2</h5>
-          <p class="card-text">This is the second advertisement.</p>
-          <p class="card-text" onclick="alert('Contact: contact2@example.com')">Contact: ***</p>
-        </div>
-        <div class="card-footer text-center">
-          <button class="btn btn-info btn-block" onclick="alert('Contact: contact2@example.com')">Details</button>
-        </div>
-      </div>
-
-      <div class="card mb-4 col-md-4">
-        <img class="card-img-top" src="https://via.placeholder.com/150" alt="Ad 3">
-        <div class="card-body">
-          <h5 class="card-title">Ad 3</h5>
-          <p class="card-text">This is the third advertisement.</p>
-          <p class="card-text" onclick="alert('Contact: contact3@example.com')">Contact: ***</p>
-        </div>
-        <div class="card-footer text-center">
-          <button class="btn btn-info btn-block" onclick="alert('Contact: contact3@example.com')">Details</button>
-        </div>
-      </div>
-
-      <div class="card mb-4 col-md-4">
-        <img class="card-img-top" src="https://via.placeholder.com/150" alt="Ad 4">
-        <div class="card-body">
-          <h5 class="card-title">Ad 4</h5>
-          <p class="card-text">This is the fourth advertisement.</p>
-          <p class="card-text" onclick="alert('Contact: contact4@example.com')">Contact: ***</p>
-        </div>
-        <div class="card-footer text-center">
-          <button class="btn btn-info btn-block" onclick="alert('Contact: contact4@example.com')">Details</button>
-        </div>
-      </div>
-
-      <div class="card mb-4 col-md-4">
-        <img class="card-img-top" src="https://via.placeholder.com/150" alt="Ad 5">
-        <div class="card-body">
-          <h5 class="card-title">Ad 5</h5>
-          <p class="card-text">This is the fifth advertisement.</p>
-          <p class="card-text" onclick="alert('Contact: contact5@example.com')">Contact: ***</p>
-        </div>
-        <div class="card-footer text-center">
-          <button class="btn btn-info btn-block" onclick="alert('Contact: contact5@example.com')">Details</button>
-        </div>
-      </div>
-
-      <div class="card mb-4 col-md-4">
-        <img class="card-img-top" src="https://via.placeholder.com/150" alt="Ad 6">
-        <div class="card-body">
-          <h5 class="card-title">Ad 6</h5>
-          <p class="card-text">This is the sixth advertisement.</p>
-          <p class="card-text" onclick="alert('Contact: contact6@example.com')">Contact: ***</p>
-        </div>
-        <div class="card-footer text-center">
-          <button class="btn btn-info btn-block" onclick="alert('Contact: contact6@example.com')">Details</button>
-        </div>
-      </div>
+      <!-- Advertisements will be inserted here -->
     </div>
-  </div>
+    
+     
 
+<script>
+   /** Dynamic Advertisements Data **/
+  const advertisementData = [
+    {
+      title:'',
+      description:'',
+      image:'',
+      contact:'',
+      price:'',
+      location:'',
+      rating:''
+    },
+    {
+      title:'',
+      description:'',
+      image:'',
+      contact:'',
+      price:'',
+      location:'',
+      rating:''
+    },
+    {
+      title:'',
+      description:'',
+      image:'',
+      contact:'',
+      price:'',
+      location:'',
+      rating:''
+    },
+    {
+      title:'',
+      description:'',
+      image:'',
+      contact:'',
+      price:'',
+      location:'',
+      rating:''
+    },
+    {
+      title:'',
+      description:'',
+      image:'',
+      contact:'',
+      price:'',
+      location:'',
+      rating:''
+    },
+    {
+      title:'',
+      description:'',
+      image:'',
+      contact:'',
+      price:'',
+      location:'',
+      rating:''
+    },
+    {
+      title:'',
+      description:'',
+      image:'',
+      contact:'',
+      price:'',
+      location:'',
+      rating:''
+    },
+    ]
+    /** Creating the Advertisement Card **/
+    function createAdvertisementCard(data) {
+      return `
+      <div class="col-md col-lg-4 d-flex align-align-items-stretch">
+        <div class="card mb-4">
+        <img class="card-img-top" src="${data.image}" alt="${data.title}"/>
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">${data.title}</h5>
+          <p class="card-text flex-grow-1">${data.description}</p>
+          <p class="card-text"><strong>Price:</strong> ${data.description}</p>
+          <p class="card-text"><strong>Location:</strong> ${data.location}</p>
+          <p class="card-text"><strong>Seller Rating:</strong> ${data.rating}</p>
+          <p class="card-text contact-info" data-contact="${data.contact}">Contact: ***</p>
+        </div>
+        <div class="card-footer text-center">
+          <button class="btn btn-info btn-block btn-details">Details</button>
+          <button class="btn btn-secondary btn-block btn-toggle">Toggle Contact</button>
+        </div>
+      </div>
+      </div>
+      `;
+    }
+</script>
 </body>
 
 </html>
+
+
